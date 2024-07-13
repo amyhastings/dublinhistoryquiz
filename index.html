@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dublin History Quizzes</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Test your knowledge of Dublin's history with these quizzes and maybe
+        learn a few new facts along the way.">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>The Dublin History Quiz Website</h1>
+            <h4>Test your knowledge of Dublin's history</h4>
+        </header>
+        <nav>
+            <div class="nav">
+                <!-- nav goes here -->
+            </div>
+        </nav>
+
+        <main>
+        <div class="numquiz">
+            <form>
+                <div>
+                  <label for="rising">What year did the Easter Rising take place?</label>
+                  <input type="number" id="rising">
+                </div>
+                <button type="submit" class="guess">Guess</button>
+              </form>
+        </div>
+
+            <div class="picquiz">
+                <div class="quizstart">
+                    <p>
+                        Welcome to my awesome quiz! To play, just click the 'Start Quiz'
+                        button below. For each question, pick the right answer to see
+                        a cool fact. To move on to the next question, click the 'Next Question' button.
+                    </p>
+                    <button type="button" id="start">Start Quiz</button>
+                </div>
+
+                <div class="questions inactive">
+                </div>
+
+                <div class="results inactive">
+                    <h2>Results</h2>
+                    <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
+                    <button type="button" id="restart">Restart Quiz</button>
+                </div>
+                <script src="js/picquiz.js"></script>
+            </div>
+
+            <div class="mapquiz">
+                <!-- mapquiz goes here -->
+            </div>
+        </main>
+        <footer>
+            <div class="footwrap">
+                <div class="foot1">
+                <!-- footer menu goes here -->
+                </div>
+                <div class="foot2">
+                    <ul>
+                        <li>E-mail: <a href="mailto:fake.email@dhq.com">fake.email@dhq.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy">
+                <p>&copy; 2024 Dublin History Quizzes. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
