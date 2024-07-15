@@ -20,15 +20,19 @@
         </nav>
 
         <main>
-        <div class="numquiz">
-            <form>
-                <div>
-                  <label for="rising">What year did the Easter Rising take place?</label>
-                  <input type="number" id="rising">
+            <div class="numquiz">
+                <form class="numquiz-form" id="numquiz-form">
+                    <div id="numquiz-form-content">
+                    </div>
+                    <button type="submit" id="guess">Guess</button>
+                </form>
+                <div class="numresults inactive">
+                    <h2>Results</h2>
+                    <p>You got <span id="numcorrect">0</span> out of <span id="numtotal">0</span> correct!</p>
+                    <button type="button" id="numrestart">Restart Quiz</button>
                 </div>
-                <button type="submit" class="guess">Guess</button>
-              </form>
-        </div>
+                <script src="js/numquiz.js"></script>
+            </div>
 
             <div class="picquiz">
                 <div class="quizstart">
