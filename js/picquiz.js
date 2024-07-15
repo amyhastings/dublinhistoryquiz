@@ -92,6 +92,8 @@ document.addEventListener('click', function(e){
     } else if (id === "restart") {
         startContainer.classList.remove("inactive");
         resultsContainer.classList.add("inactive");
+        numCorrect = 0;
+        currentQuestionIndex=0;
     }
 }
 );
