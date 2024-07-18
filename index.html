@@ -21,11 +21,26 @@
 
         <main>
             <div class="numquiz">
+                <h3>Dublin by the Numbers</h3>
+                <p>
+                    Test your knowledge of facts and figures about Dublin. To play, fill in the
+                    box beside each question and then click the 'Check my answers!' button.
+                    Make sure to put in a guess in response to every question!
+                </p>
                 <form class="numquiz-form" id="numquiz-form">
                     <div id="numquiz-form-content">
                     </div>
-                    <button type="submit" id="guess">Guess</button>
+                    <button type="submit" id="guess">Check my answers!</button>
                 </form>
+                <div id="errorModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" id="closemodal">&times;</span>
+                            <h3>Something went wrong!</h3>
+                        </div>
+                        <div id="modal-text"></div>
+                    </div>
+                </div>
                 <div class="numresults inactive">
                     <h2>Results</h2>
                     <p>You got <span id="numcorrect">0</span> out of <span id="numtotal">0</span> correct!</p>
@@ -36,10 +51,12 @@
 
             <div class="picquiz">
                 <div class="quizstart">
+                    <h3>Picture this!</h3>
                     <p>
-                        Welcome to my awesome quiz! To play, just click the 'Start Quiz'
-                        button below. For each question, pick the right answer to see
-                        a cool fact. To move on to the next question, click the 'Next Question' button.
+                        Can you answer questions about the history of important Dublin landmarks and streets?
+                        To play, just click the 'Start Quiz' button below to see a picture, a question and a list of possible answers.
+                        Click on an answer option to see the correct answer and a cool fact.
+                        To move on to the next question, click the 'Next Question' button.
                     </p>
                     <button type="button" id="start">Start Quiz</button>
                 </div>
@@ -56,6 +73,8 @@
             </div>
 
             <div class="mapquiz">
+                <h3>What's Map-enning?</h3>
+                <p>How to play the quiz goes here!</p>
                 <!-- mapquiz goes here -->
             </div>
         </main>
