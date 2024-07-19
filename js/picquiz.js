@@ -128,9 +128,9 @@ function checkAnswer(e) {
     if (currentQuestionIndex < quizData.length - 1) {
     if (isCorrect) {
         numCorrect++;
-        resultText += "You are correct!";
+        resultText += `<h4>You are correct!</h4>`;
     } else {
-        resultText += "Not quite!";
+        resultText += `<h4>Not quite!</h4>`;
     }
     resultText += `<p>${currentQuestion.fact}</p><break><button type="button" id="next">Next Question</button>`;
     questionContainer.innerHTML = `${resultText}`;
@@ -138,9 +138,9 @@ function checkAnswer(e) {
     } else {
         if (isCorrect) {
             numCorrect++;
-            resultText += "You are correct!";
+            resultText += `<h4>You are correct!</h4>`;
         } else {
-            resultText += "Not quite!";
+            resultText += `<h4>Not quite!</h4>`;
         }
             resultText += `<p>${currentQuestion.fact}</p><break><button type="button" id="last">Show My Results!</button>`;
             questionContainer.innerHTML = `${resultText}`;
