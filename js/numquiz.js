@@ -45,12 +45,13 @@ let modal = document.getElementById("errorModal");
 let span = document.getElementsByClassName("close")[0];
 
 
-const formContainer = document.querySelector(".numquiz-form");
+const formContainer = document.querySelector(".numquestions");
 const formContent = document.querySelector("#numquiz-form-content");
 const numResultsContainer = document.querySelector(".numresults");
 const numRestartButton = document.querySelector("#numrestart");
 const numTotalSpan = document.querySelector("#numtotal");
 const numCorrectSpan = document.querySelector("#numcorrect");
+const numStartContainer = document.querySelector(".numquizstart");
 
 window.addEventListener("load", generateForm());
 
@@ -59,6 +60,7 @@ function generateForm() {
     numQuizData.forEach(currentQuestion => {
         newFormContent += `
         <label for="${currentQuestion.id}">${currentQuestion.question}</label>
+        <br>
         <input type="number" id="${currentQuestion.id}">
         <br>`;
     });
@@ -113,16 +115,20 @@ function checkNumAnswer() {
 
 document.addEventListener('click', function(e){
     const id = e.target.id;
-    if (id === "numrestart") {
+    if (id === "numstart") {
+        numStartContainer.classList.add("inactive");
         formContainer.classList.remove("inactive");
-        numResultsContainer.classList.add("inactive");
-        formContainer.reset();
     } else if (id === "guess") {
         checkNumAnswer();
     } else if (id === "closemodal") {
         modal.style.display = "none";
+    } else if (id === "numrestart") {
+        formContainer.classList.remove("inactive");
+        numResultsContainer.classList.add("inactive");
+        formContainer.reset();
     }
 });
+
 
 window.onclick = function(event) {
     if (event.target == modal) {
