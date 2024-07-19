@@ -6,11 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Test your knowledge of Dublin's history with these quizzes and maybe
         learn a few new facts along the way.">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <header>
-            <h1>The Dublin History Quiz Website</h1>
+            <h1>Dublin History Quizzes</h1>
             <h4>Test your knowledge of Dublin's history</h4>
         </header>
         <nav>
@@ -18,20 +21,82 @@
                 <!-- nav goes here -->
             </div>
         </nav>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <a href="#numquiz">
+                    <!-- <img src="images/Cathedrals.jpg" alt="St Patrick's Cathedral, Dublin" class="carousel1s"> -->
+                    <img src="images/Cathedralm.jpg" alt="St Patrick's Cathedral, Dublin" class="carousel1m">
+                    <!-- <img src="images/Cathedrall.jpg" alt="St Patrick's Cathedral, Dublin" class="carousel1l"> -->
+                </a>
+                <div class="carousel-caption">
+                    <a href="#numquiz">
+                        <h3>Dublin by the Numbers!</h3>
+                        <p>How much do you know about key dates and important figures related to Dublin?</p>
+                    </a>
+                </div>
+              </div>
+              <div class="item">
+                <a href="#picquiz"><img src="images/librarym.jpg" alt="Trinity Library"></a>
+                <div class="carousel-caption">
+                    <a href="#picquiz">
+                        <h3>Picture This!</h3>
+                        <p>Are you ready to test your knowledge about Dublin's landmarks and streets?</p>
+                    </a>
+                </div>
+              </div>
+              <div class="item">
+                <a href="#mapquiz"><img src="images/speedsmapm.jpg" alt="Historic map of Dublin"></a>
+                <div class="carousel-caption">
+                    <a href="#mapquiz">
+                        <h3>What's Map-enning?</h3>
+                        <p>Can you identify Dublin's oldest buildings on the oldest map of Dublin?</p>
+                    </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
         <main>
-            <div class="numquiz">
-                <h3>Dublin by the Numbers</h3>
-                <p>
-                    Test your knowledge of facts and figures about Dublin. To play, fill in the
-                    box beside each question and then click the 'Check my answers!' button.
-                    Make sure to put in a guess in response to every question!
-                </p>
-                <form class="numquiz-form" id="numquiz-form">
-                    <div id="numquiz-form-content">
+
+            <div class="numquiz" id="numquiz">
+                <div class="numquizstart">
+                    <h3>Dublin by the Numbers</h3>
+                    <div class="numquizstartcontent">
+                        <p>
+                            Test your knowledge of facts and figures about Dublin. To play, fill in the
+                            box beside each question and then click the 'Check my answers!' button.
+                            Make sure to put in a guess in response to every question!
+                            <button type="button" id="numstart">Start Quiz</button>
+                        </p>
+                        <img src="images/numquizstart.jpg" alt="Decorative graphic showing buildings, people and horse and cart" class="numquizstartimg">
                     </div>
-                    <button type="submit" id="guess">Check my answers!</button>
-                </form>
+                </div>
+                <div class="numquestions inactive">
+                    <form class="numquiz-form" id="numquiz-form">
+                        <div id="numquiz-form-content">
+                        </div>
+                        <button type="submit" id="guess">Check my answers!</button>
+                    </form>
+                </div>
                 <div id="errorModal" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -42,41 +107,52 @@
                     </div>
                 </div>
                 <div class="numresults inactive">
-                    <h2>Results</h2>
+                    <h4>Results</h4>
                     <p>You got <span id="numcorrect">0</span> out of <span id="numtotal">0</span> correct!</p>
                     <button type="button" id="numrestart">Restart Quiz</button>
                 </div>
                 <script src="js/numquiz.js"></script>
             </div>
 
-            <div class="picquiz">
+            <div class="picquiz" id="picquiz">
                 <div class="quizstart">
                     <h3>Picture this!</h3>
-                    <p>
-                        Can you answer questions about the history of important Dublin landmarks and streets?
-                        To play, just click the 'Start Quiz' button below to see a picture, a question and a list of possible answers.
-                        Click on an answer option to see the correct answer and a cool fact.
-                        To move on to the next question, click the 'Next Question' button.
-                    </p>
-                    <button type="button" id="start">Start Quiz</button>
+                    <div class="quizstartcontent">
+                        <img src="images/picquizstart.jpg" alt="Decorative graphic showing castle, lightbulbs, cogs and books" class="picquizstart">
+                        <p>
+                            Can you answer questions about the history of important Dublin landmarks and streets?
+                            To play, just click the 'Start Quiz' button below to see a picture, a question and a list of possible answers.
+                            Click on an answer option to see the correct answer and a cool fact.
+                            To move on to the next question, click the 'Next Question' button.
+                            <button type="button" id="start">Start Quiz</button>
+                        </p>
+                    </div>
                 </div>
-
                 <div class="questions inactive">
                 </div>
-
                 <div class="results inactive">
-                    <h2>Results</h2>
+                    <h4>Results</h4>
                     <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
                     <button type="button" id="restart">Restart Quiz</button>
                 </div>
                 <script src="js/picquiz.js"></script>
             </div>
 
-            <div class="mapquiz">
-                <h3>What's Map-enning?</h3>
-                <p>How to play the quiz goes here!</p>
+            <div class="mapquiz" id="mapquiz">
+                <div class="mapquizstart">
+                    <h3>What's Map-enning?</h3>
+                    <div class="mapquizstartcontent">
+                        <p>
+                            Can you identify Dublin's oldest buildings on the oldest map of Dublin?
+                            To play, xxxx
+                            <button type="button" id="mapstart">Start Quiz</button>
+                        </p>
+                        <img src="images/mapquizstart.jpg" alt="Decorative graphic showing map" class="mapquizstartimg">
+                    </div>
+                </div>
                 <!-- mapquiz goes here -->
             </div>
+
         </main>
         <footer>
             <div class="footwrap">
