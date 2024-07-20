@@ -261,6 +261,9 @@ main {
     margin: 10px auto;
 }
 
+.speedsmapquiz svg {
+    max-height: 90vh;
+}
 
 footer {
     background-color: #0d3f40;
