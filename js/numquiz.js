@@ -46,6 +46,7 @@ let span = document.getElementsByClassName("close")[0];
 
 
 const formContainer = document.querySelector(".numquestions");
+const formObject = document.querySelector(".numquiz-form");
 const formContent = document.querySelector("#numquiz-form-content");
 const numResultsContainer = document.querySelector(".numresults");
 const numRestartButton = document.querySelector("#numrestart");
@@ -81,19 +82,18 @@ function checkNumAnswer() {
     numQuizData.forEach(currentQuestion => {
         let answerField = document.getElementById(`${currentQuestion.id}`);
         let answerValue = answerField.value;
-        let numCurrentQuestion = numQuizData[currentQuestionIndex];
         if (answerValue === "") { 
             formIncomplete = true;
         } 
-        if (numCurrentQuestion.answertype === "year" && answerValue < 0 || numCurrentQuestion.answertype === "year" && answerValue > 2024) { 
+        if (currentQuestion.answertype === "year" && answerValue < 0 || currentQuestion.answertype === "year" && answerValue > 2024) { 
             formInvalidYear = true;
             errormsgText += `<p>${currentQuestion.errormsg}</p>`;
         } 
-        if (numCurrentQuestion.answertype === "quantity" && answerValue < 0) {
+        if (currentQuestion.answertype === "quantity" && answerValue < 0) {
             formInvalidQuantity = true;
             errormsgText += `<p>${currentQuestion.errormsg}</p>`;
         }
-        if (numCurrentQuestion.answer === answerValue) {
+        if (currentQuestion.answer === answerValue) {
             numQuizCorrect++;
         }
     });
@@ -112,7 +112,6 @@ function checkNumAnswer() {
     }
 };
 
-
 document.addEventListener('click', function(e){
     const id = e.target.id;
     if (id === "numstart") {
@@ -123,9 +122,9 @@ document.addEventListener('click', function(e){
     } else if (id === "closemodal") {
         modal.style.display = "none";
     } else if (id === "numrestart") {
-        formContainer.classList.remove("inactive");
+        numStartContainer.classList.remove("inactive");
         numResultsContainer.classList.add("inactive");
-        formContainer.reset();
+        formObject.reset();
     }
 });
 
