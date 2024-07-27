@@ -142,32 +142,76 @@
                 <div class="mapquizstart">
                     <h3>What's Map-enning?</h3>
                     <div class="mapquizstartcontent">
-                        <p>
-                            Can you identify Dublin's oldest buildings on the oldest map of Dublin?
-                            To play, xxxx
+                        <article>
+                            <p>Can you identify some of Dublin's oldest buildings on the oldest surviving map of Dublin?</p>
+                            <p>To play, click the 'Start Quiz' button and follow the instructions!</p><br>
                             <button type="button" id="mapstart">Start Quiz</button>
-                        </p>
+                        </article>
                         <img src="images/mapquizstart.jpg" alt="Decorative graphic showing map" class="mapquizstartimg">
                     </div>
                 </div>
-                    <div class="mapquizcontent inactive">
+                    <div class="mapquizcontent inactive" id="mapquizcontent">
                         <div class="speedsmapquiz">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 1065">
-                            <image width="800" height="1065" xlink:href="images/speedsmapquiz.jpg"></image> <a xlink:href="#michans.html">
-                            <rect x="48" y="153" fill="#fff" opacity="0" width="123" height="90"></rect>
-                            </a><a xlink:href="#dubcastle.html">
-                            <rect x="540" y="482" fill="#fff" opacity="0" width="146" height="154"></rect>
-                            </a><a xlink:href="#patricks.html">
-                            <rect x="390" y="785" fill="#fff" opacity="0" width="161" height="140"></rect>
-                            </a>
-                        </svg>
+                            <img src="images/mapanswer1.png" alt="Text box stating'St Michan's Church'" class="mapanswer1 inactive">
+                            <img src="images/mapanswer2.png" alt="Text box stating 'Dublin Castle'" class="mapanswer2 inactive">
+                            <img src="images/mapanswer3.png" alt="Text box stating 'St Patrick's Cathedral'" class="mapanswer3 inactive">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 1065">
+                                <image width="800" height="1065" xlink:href="images/speedsmapquiz.jpg" id="backmap"></image> <a xlink:href="" href="">
+                                <rect x="48" y="153" fill="#fff" opacity="0" width="123" height="90" id="mapanswer1"></rect>
+                                </a><a xlink:href="" href="">
+                                <rect x="540" y="482" fill="#fff" opacity="0" width="146" height="154" id="mapanswer2"></rect>
+                                </a><a xlink:href="" href="">
+                                <rect x="390" y="785" fill="#fff" opacity="0" width="161" height="140" id="mapanswer3"></rect>
+                                </a>
+                            </svg>
                         </div>
-                            <button type="button" id="patricks">St Patrick's Cathedral</button>
+                        <div class="mapinstructions">
+                            <p>Can you find these buildings on Speed's 'Map of Dubline' of 1610?</p>
+                            <p>(i) Dublin Castle (ii) St Patrick's Cathedral (iii) St Michan's Church</p>
+                            <p>Simply click on where you think the building is on the map above.
+                                If you are correct, the building will be highlighted.
+                                You can try as many times as you like, but, if you get stuck, clicking on the 'Give Up!' button
+                                will reveal the locations of all the buildings.</p>
+                        </div>
+                        <div class="results-comment">
+                            <div class="results-comment-text"></div>
+                            <button type="button" id="giveup" class="inactive">Give up!</button>
+                            <button type="button" id="learnMore" class="inactive">Learn more about Speed's Map</button>
+                            <button type="button" id="maprestart" class="maprestart inactive">Restart Quiz</button>
+                        </div>
+                            <div id="mapModal" class="mapModal">
+                                <div class="map-modal-content">
+                                    <div class="map-modal-header">
+                                        <span class="close" id="closemapmodal">&times;</span>
+                                    </div>
+                                    <div id="mapModalText">
+                                        <h3>This is a tricky one!</h3>
+                                        <p>Dublin looked very different in 1610.</p>
+                                        <p>Would you like to</p>
+                                        <button type="button" id="giveup2">Give up!</button>
+                                        <p>or</p>
+                                        <button type="button" id="keeptrying">Keep trying!</button>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
-                    <div class="mapresults inactive">
-                        <h4>Results</h4>
-                        <p>You got <span id="mapcorrect">0</span> out of <span id="maptotal">0</span> correct!</p>
-                        <button type="button" id="maprestart">Restart Quiz</button>
+                    <div class="mapLearnMore inactive" id="mapLearnContainer">
+                        <h4>John Speed's 'Map of Dubline'</h4>
+                        <p>John Speed's 'Map of Dubline' of 1610 is the oldest surviving map of Dublin City, this version of the map being a reprint of 1896.
+                            The map was included in John Speed's atlas 'The Theatre of the Empire of Great Britaine' published in 1611. Speed likely never visited
+                            Ireland so this map was probably put together from other sources, perhaps older maps, which have since been lost.
+                        </p>
+                        <p>
+                            As well as Dublin Castle (construction began in 1204), St Patrick's Cathedral (then still St Patrick's Church, originally constructed
+                            between 1220 and 1259) and St Michan's Church (established in 1085 and rebuilt in 1685), there are many famous Dublin sites shown on the map.
+                            These include Trinity College (founded 1592), Christchurch (founded around 1030) and Dublin's City walls (parts of which still remain,
+                            such as the sections near St Audoen's Church). King's Inns, which was established 1541 and shown as 'the Innes', was located on the site
+                            of the existing Four Courts on Speed's Map (it later moved to its current location on Constitution Hill during the 1790s). Speed's map also
+                            shows that the layout of several streets has largely survived to this day, included Wood Quay, Fishamble Street, Winetavern Street,
+                            Merchant's Quay, Dame Street, South Great George's Street, Thomas Street and St James Gate.
+                        </p>
+                        <img src="images/speedsmapfull.jpg" alt="Historic map of Dublin" class="speedfull">
+                        <button type="button" class="maprestart" id="maprestart2">Restart Quiz</button>
                     </div>
                     <script src="js/mapquiz.js"></script>
                 </div>
