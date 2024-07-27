@@ -48,10 +48,12 @@ header {
     background-color: rgba(0,0,0,0.4); 
 }
 
+
 .modal-header h3 {
     text-align: center;
 }
-  
+
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
@@ -60,18 +62,57 @@ header {
     width: 80%; 
 }
 
-.close {
-    color: #ccc;
+#closemodal {
+    color: #000000;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+#closemapmodal {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  
+.map-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border-color: #4a7c73;
+    border-radius: 5px;
+    border-style: solid;
+    width: 60%; 
+    text-align: center;
+}
+
+#mapModalText {
+    margin: 10px auto;
+}
+
+#mapModalText h3 {
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.mapModal {
+    display: none; 
+    position: fixed; 
+    z-index: 4; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 main {
@@ -104,7 +145,7 @@ main {
     margin: 10px auto;
 }
 
-.numquizstartcontent {
+/* .numquizstartcontent {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 10px;
@@ -112,7 +153,7 @@ main {
     align-items: center;
     padding: 10px;
     grid-gap: 25px;
-}
+} */
 
 .numquiz img {
     width: 100%;
@@ -129,13 +170,13 @@ main {
     border-color: #f7a706;
 }
 
-.picquizstart img {
+.picquizstart {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-.quizstartcontent {
+/* .quizstartcontent {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 10px;
@@ -143,7 +184,7 @@ main {
     align-items: center;
     padding: 10px;
     grid-gap: 25px;
-}
+} */
 
 .questions img {
     width: 100%;
@@ -166,41 +207,13 @@ main {
 }
 
 
-/* .picquiz {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-    /* grid-gap: 25px;
-}
-
-.picquiz img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.picquiz .text {
-    display: flex;
-    align-items: center;
-} */
-
-/* .picquiz {
-    display: flex;
-    align-items: center;
-} */
-
-.picquiz img {
+.questions img {
     width: 90%;
     height: auto;
     border-radius: 5px;
 }
 
-/* .joininfo img {
-    width: 90%;
-    height: auto;
-    display: block;
-    margin: auto;
-    border-radius: 5px;
-} */
+
 
 .picquiz h3 {
     text-align: center;
@@ -234,17 +247,19 @@ main {
     text-align: center;
 }
 
+.numquizstartcontent,
+.quizstartcontent,
 .mapquizstartcontent {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(249px, 1fr));
+    grid-gap: 25px;
+    margin: 20px auto;
     text-align: justify;
     align-items: center;
-    padding: 10px;
-    grid-gap: 25px;
 }
 
-.mapquiz img {
+
+.mapquizstartimg {
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -257,12 +272,85 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
     margin: 10px auto;
 }
 
+#mapstart {
+    margin: 0px auto 10px auto;
+    display: block;
+}
+
+.mapinstructions {
+    width: 95%;
+    margin: 30px auto 10px auto;
+    text-align: center;
+}
+
+.results-comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mapLearnMore h4 {
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mapLearnMore p {
+    width: 95%;
+    margin: 30px auto;
+    text-align: justify;
+}
+
+.mapLearnMore img {
+    width: 95%;
+    margin: auto;
+}
+
+.mapLearnMore button {
+    margin: 30px auto;
+}
+
+
+.speedsmapquiz {
+    width: 578px;
+    height: 770px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 5% 15% 27% 19% 1% 17% 16%;
+    grid-template-rows: 14% 9% 22% 15% 14% 13% 13%;
+}
+
 .speedsmapquiz svg {
-    max-height: 90vh;
+    z-index: 1;
+    grid-column: 1 / 8;
+    grid-row: 1 / 8;
+}
+
+.mapanswer1{
+    z-index: 3; 
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 100%;
+    height: auto;
+}
+
+.mapanswer2{
+    z-index: 3; 
+    grid-column: 6 / 7;
+    grid-row: 4 / 5;
+    width: 100%;
+    height: auto;
+}
+
+.mapanswer3{
+    z-index: 3; 
+    grid-column: 4 / 5;
+    grid-row: 6 / 7;
+    width: 100%;
+    height: auto;
 }
 
 footer {
@@ -273,6 +361,8 @@ footer {
     width: 100%;
     padding-bottom: 2%;
 }
+
+
 
 .footwrap p {
     margin: 0;
@@ -326,7 +416,30 @@ footer {
     margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 350px) {
+
+    .speedsmapquiz {
+        width: 249px;
+        height: 331px;
+        margin: 20px auto;
+    }
+
+    .map-modal-content {
+        width: 80%; 
+    }
+}
+
+@media (min-width: 350px) {
+
+    .speedsmapquiz {
+        width: 262px;
+        height: 349px;
+        margin: 20px auto;
+    }
+
+    .map-modal-content {
+        width: 80%; 
+    }
 
     .carousel1m {
         display: none;
@@ -356,13 +469,32 @@ footer {
 
 @media (min-width: 768px) {
 
-
-    /* header {
-        background-color: #0d3f40;
-        width: 100%;
-        height: 220px;
-        padding-top: 20px;  
+    .numquizstartcontent,
+    .quizstartcontent,
+    .mapquizstartcontent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
+        padding: 25px;
+        margin: 10px;
+        text-align: justify;
+        align-items: center;
+    }
+    
+    /* .mapquizstart {
+        font-size: medium;
     } */
+
+    .speedsmapquiz {
+        width: 526px;
+        height: 700px;
+        margin: 20px auto;
+    }
+
+    .map-modal-content {
+        width: 50%; 
+    }
+    
     
     .carousel1s {
         display: none;
@@ -391,6 +523,25 @@ footer {
 }
 
 @media (min-width: 1024px) {
+
+    .numquizstartcontent,
+    .quizstartcontent,
+    .mapquizstartcontent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
+        padding: 25px;
+        margin: 10px;
+        text-align: justify;
+        align-items: center;
+    }
+    
+    .numquizstart,
+    .quizstart,
+    .mapquizstart {
+        font-size: large;
+    }
+
 
     .carousel1m {
         display: none;
