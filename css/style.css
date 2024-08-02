@@ -13,27 +13,49 @@ body {
 }
 
 header {
-    text-align: center;
     background-color: #0d3f40;
     color: #ffffff;
     width: 100%;
-    height: 100px;
-    padding: 5px;  
+    padding: 10px 20px;
 }
 
+header h2 {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
 
+.speedsmaps,
+.speedsmapm, 
+.speedsmapl {
+    width: 100vw;
+    border-style: none;  
+}
+
+.banner-images {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 67px;
+    left: 20px;
+    background-color: #ffffff;
+    z-index: 2;
+    width: 250px;
+    height: 170px;
+    padding: 15px;
+}
+
+.banner-overlay h3 {
+    color: #0d3f40;
+    margin: 0;
+}
 
 .inactive {
     display: none;
 } 
 
-.carousel-inner a,
-.carousel-inner a:hover,
-.carousel-inner a:visited {
-    text-decoration: none;
-    color: #FFFFFF;
-    text-shadow: #000 0 0 10px;
-}
 
 .modal {
     display: none; 
@@ -427,41 +449,31 @@ footer {
     .map-modal-content {
         width: 80%; 
     }
+
+    .speedsmaps {
+        display: block;
+    }
+
+    .speedsmapm {
+        display: none;
+    }
+
+    .speedsmapl {
+        display: none;
+    }
 }
 
 @media (min-width: 350px) {
 
-    .speedsmapquiz {
-        width: 262px;
-        height: 349px;
-        margin: 20px auto;
+    .speedsmaps {
+        display: block;
     }
 
-    .map-modal-content {
-        width: 80%; 
-    }
-
-    .carousel1m {
+    .speedsmapm {
         display: none;
     }
 
-    .carousel1l {
-        display: none;
-    }
-
-    .carousel2m {
-        display: none;
-    }
-
-    .carousel2l {
-        display: none;
-    }
-
-    .carousel3m {
-        display: none;
-    }
-
-    .carousel3l {
+    .speedsmapl {
         display: none;
     }
 
@@ -496,27 +508,15 @@ footer {
     }
     
     
-    .carousel1s {
+    .speedsmaps {
         display: none;
     }
 
-    .carousel1l {
-        display: none;
+    .speedsmapm {
+        display: block;
     }
 
-    .carousel2s {
-        display: none;
-    }
-
-    .carousel2l {
-        display: none;
-    }
-
-    .carousel3s {
-        display: none;
-    }
-
-    .carousel3l {
+    .speedsmapl {
         display: none;
     }
 
@@ -542,29 +542,22 @@ footer {
         font-size: large;
     }
 
+    .questions img {
+        width: 80%;
+    }
 
-    .carousel1m {
+    .speedsmaps {
         display: none;
     }
 
-    .carousel1s {
+    .speedsmapm {
         display: none;
     }
 
-    .carousel2m {
-        display: none;
+    .speedsmapl {
+        display: block;
     }
 
-    .carousel2s {
-        display: none;
-    }
 
-    .carousel3m {
-        display: none;
-    }
-
-    .carousel3s {
-        display: none;
-    }
 
 }
