@@ -12,16 +12,57 @@ body {
     background-color: #fce9db;
 }
 
+@font-face {
+    font-family: Essays1743;
+    src: url('fonts/Essays1743.ttf');
+}
+
 header {
     background-color: #0d3f40;
     color: #ffffff;
     width: 100%;
     padding: 10px 20px;
+    position: relative;
+}
+
+.hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 2;
+}
+
+.close-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 2;
 }
 
 header h2 {
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Essays1743, serif;
+    z-index: 1;
+}
+
+.menu-label {
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+.menu-content {
+    font-weight: bold;
+    padding: 0 0 0 50px;
+}
+
+.menu-content ul {
+    list-style-type: none;
+    padding: 0 0 0 50px;
+    color: #FFFFFF;
+    text-align: right;
 }
 
 .speedsmaps,
@@ -31,6 +72,10 @@ header h2 {
     border-style: none;  
 }
 
+.banner {
+    position: relative;
+}
+
 .banner-images {
     position: relative;
     z-index: 1;
@@ -38,18 +83,25 @@ header h2 {
 
 .banner-overlay {
     position: absolute;
-    top: 67px;
-    left: 20px;
+    top: 20px; 
+    left: 20px; 
     background-color: #ffffff;
     z-index: 2;
     width: 250px;
-    height: 170px;
+    height: 190px;
     padding: 15px;
 }
 
 .banner-overlay h3 {
     color: #0d3f40;
     margin: 0;
+}
+
+#goToAboutFromMain {
+    color: #555555;
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .inactive {
