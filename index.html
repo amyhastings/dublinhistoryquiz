@@ -12,12 +12,22 @@
     <body>
         <header>
             <h2>Dublin History Quizzes</h2>
+            <nav>
+                <div class="navsmall">
+                    <img src="images/hamburger.png" alt="Hamburger menu" class="hamburger" id="hamburger">
+                    <img src="images/close.png" alt="X to close" class="close-menu inactive" id="close">
+                    <div class="menu-content inactive">
+                        <p class="menu-label">Menu</p>
+                        <ul>
+                            <li id="scrollNumQuiz">The Number Quiz</li>
+                            <li id="scrollPicQuiz">The Picture Quiz</li>
+                            <li id="scrollMapQuiz">The Map Quiz</li>
+                            <li id="goToAbout">About</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
-        <nav>
-            <div class="nav">
-                <!-- nav goes here -->
-            </div>
-        </nav>
         <div class="banner">
             <div class="banner-images">
             <img src="images/speedsmap.jpg" alt="Historic map of Dublin." class="speedsmaps">
@@ -30,10 +40,18 @@
                     Test your knowledge of Dublin's history with these quizzes and maybe
                     learn a few new facts along the way.
                 </p>
+                <p id="goToAboutFromMain">About</p>
             </div>
         </div>
-        <main>
-
+        <div class="about inactive">
+            <h3>About this page</h3>
+            <p>text text text</p>
+            <h3>Resources</h3>
+            <p>links here</p>
+            <h3>Contact</h3>
+            <p>contacts</p>
+        </div>
+        <main class="main-content">
             <div class="numquiz" id="numquiz">
                 <div class="numquizstart">
                     <h3>Dublin by the Numbers</h3>
@@ -68,7 +86,6 @@
                     <p>You got <span id="numcorrect">0</span> out of <span id="numtotal">0</span> correct!</p>
                     <button type="button" id="numrestart">Restart Quiz</button>
                 </div>
-                <script src="js/numquiz.js"></script>
             </div>
 
             <div class="picquiz" id="picquiz">
@@ -92,7 +109,6 @@
                     <p>You got <span id="correct">0</span> out of <span id="total">0</span> correct!</p>
                     <button type="button" id="restart">Restart Quiz</button>
                 </div>
-                <script src="js/picquiz.js"></script>
             </div>
 
             <div class="mapquiz" id="mapquiz">
@@ -170,8 +186,11 @@
                         <img src="images/speedsmapfull.jpg" alt="Historic map of Dublin" class="speedfull">
                         <button type="button" class="maprestart" id="maprestart2">Restart Quiz</button>
                     </div>
-                    <script src="js/mapquiz.js"></script>
                 </div>
+                <script src="js/nav.js"></script>
+                <script src="js/numquiz.js"></script>
+                <script src="js/picquiz.js"></script>
+                <script src="js/mapquiz.js"></script>
 
         </main>
         <footer>
