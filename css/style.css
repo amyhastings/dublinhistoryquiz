@@ -31,6 +31,7 @@ header {
     right: 0;
     padding: 10px;
     z-index: 2;
+    cursor: pointer;
 }
 
 .close-menu {
@@ -39,12 +40,17 @@ header {
     right: 0;
     padding: 10px;
     z-index: 2;
+    cursor: pointer;
 }
 
 header h2 {
     margin: 0;
     font-family: Essays1743, serif;
     z-index: 1;
+}
+
+#dhq-home {
+    cursor: pointer;
 }
 
 .menu-label {
@@ -63,6 +69,38 @@ header h2 {
     padding: 0 0 0 50px;
     color: #FFFFFF;
     text-align: right;
+    cursor: pointer;
+}
+
+.about {
+    margin: 20px auto;
+    padding: 0 20px 20px 20px;
+    text-align: justify;
+    max-width: 1000px;
+}
+
+.about ul {
+    margin: 20px;
+}
+
+.about-content img {
+    width: 100%;
+    height: auto;
+}
+
+.quotetext {
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    font-style: italic;
+}
+
+.quoteref {
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    color: #555555;
 }
 
 .speedsmaps,
@@ -544,7 +582,20 @@ footer {
         text-align: justify;
         align-items: center;
     }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 50px;
+        padding: 25px;
+        text-align: justify;
+    }
     
+    .about-article p {
+        margin-block-start: 0px;
+        margin-block-end: 20px;
+    }
+
     /* .mapquizstart {
         font-size: medium;
     } */
@@ -587,7 +638,20 @@ footer {
         text-align: justify;
         align-items: center;
     }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 50px;
+        padding: 25px;
+        text-align: justify;
+    }
     
+    .about-article p {
+        margin-block-start: 0px;
+        margin-block-end: 20px;
+    }
+
     .numquizstart,
     .quizstart,
     .mapquizstart {
