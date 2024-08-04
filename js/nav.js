@@ -8,7 +8,6 @@ const banner = document.querySelector(".banner");
 const mainContainter = document.querySelector(".main-content");
 const aboutContainer = document.querySelector(".about");
 
-
 document.addEventListener('click', function(e){
     const id = e.target.id;
     e.preventDefault();
@@ -26,11 +25,10 @@ document.addEventListener('click', function(e){
         openAbout();
     } else if (id === "goToAboutFromMain") {
         openAbout();
+    } else if (id === "dhq-home") {
+        window.location.reload();
     }
 });
-
-
-
 
 function openMenu() {
     menuContainer.classList.remove("inactive");
@@ -69,10 +67,5 @@ function openAbout() {
     closeMenu();
 };
 
-function activateMainContent() {
-    banner.classList.remove("inactive");
-    mainContainter.classList.remove("inactive");
-    aboutContainer.classList.add("inactive");
-};
 
 
