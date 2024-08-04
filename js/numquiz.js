@@ -41,11 +41,12 @@ const numQuizData = [
     },
 ];
 
-let modal = document.getElementById("errorModal");
+let modal = document.getElementById("error-modal");
 let span = document.getElementsByClassName("close")[0];
 let errormsgText = "";
 
 
+const numQuizContainer = document.querySelector(".numquiz");
 const formContainer = document.querySelector(".numquestions");
 const formObject = document.querySelector(".numquiz-form");
 const formContent = document.querySelector("#numquiz-form-content");
@@ -53,7 +54,7 @@ const numResultsContainer = document.querySelector(".numresults");
 const numRestartButton = document.querySelector("#numrestart");
 const numTotalSpan = document.querySelector("#numtotal");
 const numCorrectSpan = document.querySelector("#numcorrect");
-const numStartContainer = document.querySelector(".numquizstart");
+const numStartContainer = document.querySelector(".numquiz-start");
 const numCorrectResultsText = document.querySelector(".correct-results")
 
 function generateForm() {
@@ -69,8 +70,9 @@ function generateForm() {
 }
 
 function startNumQuiz() {
-    numStartContainer.classList.add("inactive");
-    formContainer.classList.remove("inactive");
+    hide(numStartContainer);
+    show(formContainer);
+    numQuizContainer.scrollIntoView({behavior: "smooth"});
 };
 
 function checkFormComplete() {
@@ -139,12 +141,13 @@ function checkForm() {
         modalTextContainer.innerHTML = `${errormsgText}`;
     } else {
         modal.style.display = "none";       
-        formContainer.classList.add("inactive");
-        numResultsContainer.classList.remove("inactive");
+        hide(formContainer);
+        show(numResultsContainer);
         numTotalSpan.textContent = numQuizData.length;
         numCorrectSpan.textContent = countCorrectAnswers();
         showCorrectAnswers();
     }
+    numQuizContainer.scrollIntoView({behavior: "smooth"});
 };
 
 function showCorrectAnswers() {
@@ -158,9 +161,10 @@ function showCorrectAnswers() {
 };
 
 function restartNumQuiz() {
-    numStartContainer.classList.remove("inactive");
-    numResultsContainer.classList.add("inactive");
+    show(numStartContainer);
+    hide(numResultsContainer);
     formObject.reset();
+    numQuizContainer.scrollIntoView({behavior: "smooth"});
 };
 
 window.addEventListener("load", generateForm());
@@ -172,7 +176,7 @@ document.addEventListener('click', function(e){
         startNumQuiz();
     } else if (id === "guess") {
         checkForm();
-    } else if (id === "closemodal") {
+    } else if (id === "close-modal") {
         modal.style.display = "none";
     } else if (id === "numrestart") {
         restartNumQuiz();
