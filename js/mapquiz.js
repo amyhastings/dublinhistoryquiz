@@ -120,7 +120,7 @@ document.addEventListener('click', function(e){
         wrongPlaceNum++;
         wrongAnswers();
     } else if (id === "keep-trying") {
-        modal.style.display = "none";
+        mapModal.style.display = "none";
     } else if (id === "giveup") {
         giveUp();
     } else if (id === "giveup2") {
