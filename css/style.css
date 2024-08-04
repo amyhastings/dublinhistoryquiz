@@ -170,8 +170,11 @@ header h2 {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
+    border-color: #f9703c;
+    border-radius: 5px;
+    border-style: solid;
+    width: 60%; 
+    text-align: center;
 }
 
 #closemodal {
@@ -257,20 +260,23 @@ main {
     margin: 10px auto;
 }
 
-/* .numquizstartcontent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10px;
-    text-align: justify;
-    align-items: center;
-    padding: 10px;
-    grid-gap: 25px;
-} */
-
 .numquiz img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+}
+
+.numquestions {
+    margin: 30px;
+}
+
+.numresults {
+    margin: 30px;
+}
+
+.results-list {
+    margin: 30px;
+    text-align: justify;
 }
 
 .picquiz {
@@ -287,16 +293,6 @@ main {
     height: auto;
     border-radius: 5px;
 }
-
-/* .quizstartcontent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10px;
-    text-align: justify;
-    align-items: center;
-    padding: 10px;
-    grid-gap: 25px;
-} */
 
 .questions img {
     width: 100%;
