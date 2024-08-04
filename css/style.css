@@ -135,7 +135,7 @@ header h2 {
     margin: 0;
 }
 
-#goToAboutFromMain {
+#go-to-about-from-main {
     color: #555555;
     font-weight: bolder;
     text-decoration: underline;
@@ -424,8 +424,8 @@ main {
 
 
 .speeds-map-quiz {
-    width: 578px;
-    height: 770px;
+    width: 275px;
+    height: 366px;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 5% 15% 27% 19% 1% 17% 16%;
@@ -438,7 +438,7 @@ main {
     grid-row: 1 / 8;
 }
 
-.mapanswer1{
+.mapanswer1 {
     z-index: 3; 
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -446,7 +446,7 @@ main {
     height: auto;
 }
 
-.mapanswer2{
+.mapanswer2 {
     z-index: 3; 
     grid-column: 6 / 7;
     grid-row: 4 / 5;
@@ -454,7 +454,7 @@ main {
     height: auto;
 }
 
-.mapanswer3{
+.mapanswer3 {
     z-index: 3; 
     grid-column: 4 / 5;
     grid-row: 6 / 7;
@@ -589,6 +589,12 @@ footer {
 }
 
 @media (min-width: 1024px) {
+
+    .speeds-map-quiz {
+        width: 578px;
+        height: 770px;
+        margin: 20px auto;
+    }
 
     .numquiz-start-content,
     .quiz-start-content,
