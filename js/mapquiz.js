@@ -1,8 +1,7 @@
-
-const mapStartContainer = document.querySelector(".mapquizstart");
-const mapContainer = document.querySelector(".mapquizcontent");
-const mapQuizContainer = document.getElementById("mapquizcontent");
-const mapInstructions = document.querySelector(".mapinstructions");
+const mapStartContainer = document.querySelector(".mapquiz-start");
+const mapContainer = document.querySelector(".mapquiz-content");
+const mapQuizContainer = document.getElementById("mapquiz-content");
+const mapInstructions = document.querySelector(".map-instructions");
 const mapResultsContainer = document.querySelector(".mapresults");
 const mapTotalSpan = document.querySelector("#maptotal");
 const mapCorrectSpan = document.querySelector("#mapcorrect");
@@ -10,69 +9,21 @@ const mapAnswer1 = document.querySelector(".mapanswer1");
 const mapAnswer2 = document.querySelector(".mapanswer2");
 const mapAnswer3 = document.querySelector(".mapanswer3");
 const giveUpButton = document.querySelector("#giveup");
-const mapRestartButton = document.querySelector(".maprestart");
-const learnMoreButton = document.querySelector("#learnMore");
+const mapRestartButton = document.querySelector(".map-restart");
+const learnMoreButton = document.querySelector("#learn-more");
 const resultsCommentText = document.querySelector(".results-comment-text");
-const mapLearnMore = document.querySelector(".mapLearnMore");
-const mapLearnContainer = document.getElementById("mapLearnContainer");
-const mapModal = document.querySelector("#mapModal");
+const mapLearnMore = document.querySelector(".map-learn-more");
+const mapLearnContainer = document.getElementById("map-learn-container");
+const mapModal = document.querySelector("#map-modal");
 let wrongPlaceNum = 0;
 
-
-
-document.addEventListener('click', function(e){
-    const id = e.target.id;
-    e.preventDefault();
-    if (id === "mapstart") {
-        startMapQuiz();
-    } else if (id === "mapanswer1") {
-        mapAnswer1.classList.remove("inactive");
-        markAsCorrect(mapAnswer1);
-        if (allAnswersCorrect()) {
-            allFound();
-            wrongPlaceNum = 0;
-        }
-    } else if (id === "mapanswer2") {
-        mapAnswer2.classList.remove("inactive");
-        markAsCorrect(mapAnswer2);
-        if (allAnswersCorrect()) {
-            allFound();
-            wrongPlaceNum = 0;
-        }
-    } else if (id === "mapanswer3") {
-        mapAnswer3.classList.remove("inactive");
-        markAsCorrect(mapAnswer3);
-        if (allAnswersCorrect()) {
-            allFound();
-            wrongPlaceNum = 0;
-        }
-    } else if (id === "backmap") {
-        wrongPlaceNum++;
-        wrongAnswers();
-    } else if (id === "keeptrying") {
-        modal.style.display = "none";
-    } else if (id === "giveup") {
-        giveUp();
-    } else if (id === "giveup2") {
-        giveUp();
-    } else if (id === "maprestart") {
-        restartMapQuiz();
-    } else if (id === "maprestart2") {
-        restartMapQuiz();
-    } else if (id === "learnMore") {
-        learnMore();
-    } else if (id === "closemapmodal") {
-        mapModal.style.display = "none";
-    }
-});
-
 function startMapQuiz() {
-    mapStartContainer.classList.add("inactive");
-    mapContainer.classList.remove("inactive");
-    mapInstructions.classList.remove("inactive");
-    giveUpButton.classList.remove("inactive");
-    mapRestartButton.classList.add("inactive");
-    learnMoreButton.classList.add("inactive");
+    hide(mapStartContainer);
+    show(mapContainer);
+    show(mapInstructions);
+    show(giveUpButton);
+    hide(mapRestartButton);
+    hide(learnMoreButton);
     mapQuizContainer.scrollIntoView({behavior: "smooth"});
 };
 
@@ -85,51 +36,102 @@ function allAnswersCorrect() {
     return (correctAnswers.length >= 3);
 };
 
+function resetAnswers() {
+    let correctAnswers = document.querySelectorAll(".correct");
+    correctAnswers.forEach(a => {
+        a.classList.remove("correct");
+    });
+}
+
 function wrongAnswers() {
     if (wrongPlaceNum === 3) {
         mapModal.style.display = "block";
+        wrongPlaceNum = 0;
     };
 };
 
-
 function allFound() {
+    show(resultsCommentText);
     resultsCommentText.innerHTML = `<h4>You did it!</h4>`;
-    giveUpButton.classList.add("inactive");
-    mapRestartButton.classList.remove("inactive");
-    learnMoreButton.classList.remove("inactive");
+    hide(giveUpButton);
+    hide(mapInstructions);
+    show(mapRestartButton);
+    show(learnMoreButton);
 };
 
 function giveUp() {
     mapModal.style.display = "none";
-    mapAnswer1.classList.remove("inactive");
-    mapAnswer2.classList.remove("inactive");
-    mapAnswer3.classList.remove("inactive");
-    mapInstructions.classList.add("inactive");
-    giveUpButton.classList.add("inactive");
-    mapRestartButton.classList.remove("inactive");
-    learnMoreButton.classList.remove("inactive");
+    show(mapAnswer1);
+    show(mapAnswer2);
+    show(mapAnswer3);
+    hide(mapInstructions);
+    hide(giveUpButton);
+    show(mapRestartButton);
+    show(learnMoreButton);
     resultsCommentText.innerHTML = `<h4>Good effort!</h4>`;
 };
 
 function learnMore() {
-    mapLearnMore.classList.remove("inactive");
-    mapContainer.classList.add("inactive");
+    show(mapLearnMore);
+    hide(mapContainer);
     mapLearnContainer.scrollIntoView({behavior: "smooth"});
 };
 
 function restartMapQuiz() {
-    mapStartContainer.classList.remove("inactive");
-    mapInstructions.classList.remove("inactive");
-    mapContainer.classList.add("inactive");
-    mapLearnMore.classList.add("inactive");
-    mapAnswer1.classList.add("inactive");
-    mapAnswer2.classList.add("inactive");
-    mapAnswer3.classList.add("inactive");
-    resultsCommentText.classList.add("inactive");
-}
+    show(mapStartContainer);
+    show(mapInstructions);
+    hide(mapContainer);
+    hide(mapLearnMore);
+    hide(mapAnswer1);
+    hide(mapAnswer2);
+    hide(mapAnswer3);
+    hide(resultsCommentText);
+    resetAnswers();
+};
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-      mapModal.style.display = "none";
+document.addEventListener('click', function(e){
+    const id = e.target.id;
+    mapModal.style.display = "none";
+    e.preventDefault();
+    if (id === "mapstart") {
+        startMapQuiz();
+    } else if (id === "mapanswer1") {
+        show(mapAnswer1);
+        markAsCorrect(mapAnswer1);
+        if (allAnswersCorrect()) {
+            allFound();
+            wrongPlaceNum = 0;
+        }
+    } else if (id === "mapanswer2") {
+        show(mapAnswer2);
+        markAsCorrect(mapAnswer2);
+        if (allAnswersCorrect()) {
+            allFound();
+            wrongPlaceNum = 0;
+        }
+    } else if (id === "mapanswer3") {
+        show(mapAnswer3);
+        markAsCorrect(mapAnswer3);
+        if (allAnswersCorrect()) {
+            allFound();
+            wrongPlaceNum = 0;
+        }
+    } else if (id === "backmap") {
+        wrongPlaceNum++;
+        wrongAnswers();
+    } else if (id === "keep-trying") {
+        modal.style.display = "none";
+    } else if (id === "giveup") {
+        giveUp();
+    } else if (id === "giveup2") {
+        giveUp();
+    } else if (id === "map-restart") {
+        restartMapQuiz();
+    } else if (id === "map-restart2") {
+        restartMapQuiz();
+    } else if (id === "learn-more") {
+        learnMore();
+    } else if (id === "close-map-modal") {
+        mapModal.style.display = "none";
     }
-  }
+});
