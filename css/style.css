@@ -25,7 +25,7 @@ header {
     position: relative;
 }
 
-.hamburger {
+#hamburger {
     position: absolute;
     top: 0;
     right: 0;
@@ -34,7 +34,7 @@ header {
     cursor: pointer;
 }
 
-.close-menu {
+#close-menu {
     position: absolute;
     top: 0;
     right: 0;
@@ -88,13 +88,13 @@ header h2 {
     height: auto;
 }
 
-.quotetext {
+.quote-text {
     margin-inline-start: 40px;
     margin-inline-end: 40px;
     font-style: italic;
 }
 
-.quoteref {
+.quote-ref {
     margin-inline-start: 40px;
     margin-inline-end: 40px;
     text-align: right;
@@ -150,7 +150,7 @@ header h2 {
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 4; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -177,7 +177,7 @@ header h2 {
     text-align: center;
 }
 
-#closemodal {
+#close-modal {
     color: #000000;
     float: right;
     font-size: 28px;
@@ -187,7 +187,7 @@ header h2 {
 }
 
 
-#closemapmodal {
+#close-map-modal {
     color: #000000;
     float: right;
     font-size: 28px;
@@ -208,16 +208,16 @@ header h2 {
     text-align: center;
 }
 
-#mapModalText {
+#map-modal-text {
     margin: 10px auto;
 }
 
-#mapModalText h3 {
+#map-modal-text h3 {
     text-align: center;
     margin: 20px 10px;
 }
 
-.mapModal {
+.map-modal {
     display: none; 
     position: fixed; 
     z-index: 4; 
@@ -288,7 +288,7 @@ main {
     border-color: #f7a706;
 }
 
-.picquizstart {
+.picquiz-start {
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -355,9 +355,9 @@ main {
     text-align: center;
 }
 
-.numquizstartcontent,
-.quizstartcontent,
-.mapquizstartcontent {
+.numquiz-start-content,
+.quiz-start-content,
+.mapquiz-start-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(249px, 1fr));
     grid-gap: 25px;
@@ -367,7 +367,7 @@ main {
 }
 
 
-.mapquizstartimg {
+.mapquiz-start-img {
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -388,7 +388,7 @@ main {
     display: block;
 }
 
-.mapinstructions {
+.map-instructions {
     width: 95%;
     margin: 30px auto 10px auto;
     text-align: center;
@@ -400,29 +400,30 @@ main {
     align-items: center;
 }
 
-.mapLearnMore h4 {
+.map-learn-more h4 {
     margin: 30px auto;
     text-align: center;
     font-weight: bold;
 }
 
-.mapLearnMore p {
+.map-learn-more p {
     width: 95%;
     margin: 30px auto;
     text-align: justify;
 }
 
-.mapLearnMore img {
+.map-learn-more img {
     width: 95%;
     margin: auto;
 }
 
-.mapLearnMore button {
+.map-learn-more button {
     margin: 30px auto;
+    display: block;
 }
 
 
-.speedsmapquiz {
+.speeds-map-quiz {
     width: 578px;
     height: 770px;
     margin: 20px auto;
@@ -431,7 +432,7 @@ main {
     grid-template-rows: 14% 9% 22% 15% 14% 13% 13%;
 }
 
-.speedsmapquiz svg {
+.speeds-map-quiz svg {
     z-index: 1;
     grid-column: 1 / 8;
     grid-row: 1 / 8;
@@ -461,57 +462,27 @@ main {
     height: auto;
 }
 
+.speedfull {
+    display: block;
+    margin: auto;
+}
+
 footer {
     background-color: #0d3f40;
     font-size: small;
     color: #FFFFFF;
     line-height: 1.5;
     width: 100%;
-    padding-bottom: 2%;
+    padding: 20px;
 }
 
-
-
-.footwrap p {
-    margin: 0;
-}
-
-.footwrap a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.foot1 {
+.foot-contact {
     text-align: center;
-    margin: 0;
-    padding: 0; 
 }
 
-.foot1 li {
-    display: inline-block;
-    font-weight: bold;
-    padding: 2%;
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.foot2 {
-    margin: 0 10%;
-}
-
-.foot2 ul {
-    padding: 0;
-    text-align: center; 
-}
-
-.foot2 li {
-    display: inline-block;
-    padding: 0 2%;
-    color: #FFFFFF;
-}
-
-.foot2 li a {
+.foot-contact a {
     text-decoration: underline;
+    color: #FFFFFF;
 }
 
 .copy {
@@ -526,7 +497,7 @@ footer {
 
 @media (max-width: 350px) {
 
-    .speedsmapquiz {
+    .speeds-map-quiz {
         width: 249px;
         height: 331px;
         margin: 20px auto;
@@ -567,9 +538,9 @@ footer {
 
 @media (min-width: 768px) {
 
-    .numquizstartcontent,
-    .quizstartcontent,
-    .mapquizstartcontent {
+    .numquiz-start-content,
+    .quiz-start-content,
+    .mapquiz-start-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 50px;
@@ -592,11 +563,7 @@ footer {
         margin-block-end: 20px;
     }
 
-    /* .mapquizstart {
-        font-size: medium;
-    } */
-
-    .speedsmapquiz {
+    .speeds-map-quiz {
         width: 526px;
         height: 700px;
         margin: 20px auto;
@@ -623,9 +590,9 @@ footer {
 
 @media (min-width: 1024px) {
 
-    .numquizstartcontent,
-    .quizstartcontent,
-    .mapquizstartcontent {
+    .numquiz-start-content,
+    .quiz-start-content,
+    .mapquiz-start-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 50px;
@@ -648,9 +615,9 @@ footer {
         margin-block-end: 20px;
     }
 
-    .numquizstart,
-    .quizstart,
-    .mapquizstart {
+    .numquiz-start,
+    .quiz-start,
+    .mapquiz-start {
         font-size: large;
     }
 
