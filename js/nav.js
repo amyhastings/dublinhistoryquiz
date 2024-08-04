@@ -1,5 +1,5 @@
 const menuButton = document.querySelector("#hamburger");
-const closeMenuButton = document.querySelector(".close-menu");
+const closeMenuButton = document.querySelector("#close-menu");
 const menuContainer = document.querySelector(".menu-content");
 const mapQuiz = document.getElementById("mapquiz");
 const picQuiz = document.getElementById("picquiz");
@@ -13,17 +13,17 @@ document.addEventListener('click', function(e){
     e.preventDefault();
     if (id === "hamburger") {
         openMenu();
-    } else if (id === "close") {
+    } else if (id === "close-menu") {
         closeMenu();
-    } else if (id === "scrollNumQuiz") {
+    } else if (id === "scroll-num-quiz") {
         scrollToNumQuiz();
-    } else if (id === "scrollPicQuiz") {
+    } else if (id === "scroll-pic-quiz") {
         scrollToPicQuiz();
-    } else if (id === "scrollMapQuiz") {
+    } else if (id === "scroll-map-quiz") {
         scrollToMapQuiz();
-    } else if (id === "goToAbout") {
+    } else if (id === "go-to-about") {
         openAbout();
-    } else if (id === "goToAboutFromMain") {
+    } else if (id === "go-to-about-from-main") {
         openAbout();
     } else if (id === "dhq-home") {
         window.location.reload();
@@ -31,15 +31,15 @@ document.addEventListener('click', function(e){
 });
 
 function openMenu() {
-    menuContainer.classList.remove("inactive");
-    closeMenuButton.classList.remove("inactive");
-    menuButton.classList.add("inactive");
+    show(menuContainer);
+    show(closeMenuButton);
+    hide(menuButton);
 };
 
 function closeMenu() {
-    menuContainer.classList.add("inactive");
-    closeMenuButton.classList.add("inactive");
-    menuButton.classList.remove("inactive");
+    hide(menuContainer);
+    hide(closeMenuButton);
+    show(menuButton);
 };
 
 function scrollToNumQuiz() {
@@ -61,11 +61,15 @@ function scrollToMapQuiz() {
 };
 
 function openAbout() {
-    banner.classList.add("inactive");
-    mainContainter.classList.add("inactive");
-    aboutContainer.classList.remove("inactive");
+    hide(banner);
+    hide(mainContainter);
+    show(aboutContainer);
     closeMenu();
 };
 
-
+function activateMainContent() {
+    show(banner);
+    show(mainContainter);
+    hide(aboutContainer);
+};
 
