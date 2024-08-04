@@ -13,16 +13,16 @@
         <header>
             <h2><span id="dhq-home">Dublin History Quizzes</span></h2>
             <nav>
-                <div class="navsmall">
-                    <img src="images/hamburger.png" alt="Hamburger menu" class="hamburger" id="hamburger">
-                    <img src="images/close.png" alt="X to close" class="close-menu inactive" id="close">
+                <div>
+                    <img src="images/hamburger.png" alt="Hamburger menu" id="hamburger">
+                    <img src="images/close.png" alt="X to close" class="inactive" id="close-menu">
                     <div class="menu-content inactive">
                         <p class="menu-label">Menu</p>
                         <ul>
-                            <li id="scrollNumQuiz">The Number Quiz</li>
-                            <li id="scrollPicQuiz">The Picture Quiz</li>
-                            <li id="scrollMapQuiz">The Map Quiz</li>
-                            <li id="goToAbout">About</li>
+                            <li id="scroll-num-quiz">The Number Quiz</li>
+                            <li id="scroll-pic-quiz">The Picture Quiz</li>
+                            <li id="scroll-map-quiz">The Map Quiz</li>
+                            <li id="go-to-about">About</li>
                         </ul>
                     </div>
                 </div>
@@ -40,13 +40,13 @@
                     Test your knowledge of Dublin's history with these quizzes and maybe
                     learn a few new facts along the way.
                 </p>
-                <p id="goToAboutFromMain">About</p>
+                <p id="go-to-about-from-main">About</p>
             </div>
         </div>
         <div class="about inactive">
             <h3>About Dublin History Quizzes</h3>
             <blockquote>
-                <p class="quotetext">"Our architectural heritage is a unique resource, an
+                <p class="quote-text">"Our architectural heritage is a unique resource, an
                     irreplaceable expression of the richness and diversity
                     of our past. Structures and places can, over time,
                     acquire character and special interest through their
@@ -59,10 +59,10 @@
                     lost or threatened. As we enjoy this inheritance, we
                     should ensure it is conserved in order to pass it on
                     to our successors."</p>
-                <p class="quoteref"> - Architectural Heritage Protection Guidelines (DEHLG)</p>
+                <p class="quote-ref"> - Architectural Heritage Protection Guidelines (DEHLG)</p>
             </blockquote>
             <div class="about-content">
-                <img src="images/aboutimage.jpg" alt="Reading cage in historic Marsh's Library" class="aboutimage">
+                <img src="images/aboutimage.jpg" alt="Reading cage in historic Marsh's Library" class="about-image">
                 <article class="about-article">
                     <p>Awareness of our shared heritage is crucial to ensuring its continued survival, but it is frequently
                         the case that people do not know about the history of their local areas, often passing by historical
@@ -104,7 +104,7 @@
                     the <a href="https://dublincivictrust.ie/" target="_blank">Dublin Civic Trust</a>,
                     etc. hold events on heritage and tours of historic properties and areas.</li>
                 <li>The <a href="https://discoveryprogramme.ie/resources/" target="_blank">Discovery Programme Centre for Archaeology and Innovation Ireland</a>
-                provides a wide range of resources for all age groups, such as
+                    provides a wide range of resources for all age groups, such as
                 <a href="https://discoveryprogramme.ie/publications/discovering-the-bronze-age-resource-teachers-pack/" target="_blank">
                     Discovering the Bronze Age Resource Pack for Teachers</a></li>
                 <li>The Heritage Council's <a href="https://www.heritageinschools.ie/" target="_blank">
@@ -119,9 +119,9 @@
         </div>
         <main class="main-content">
             <div class="numquiz" id="numquiz">
-                <div class="numquizstart">
+                <div class="numquiz-start">
                     <h3>Dublin by the Numbers</h3>
-                    <div class="numquizstartcontent">
+                    <div class="numquiz-start-content">
                         <article>
                             <p>
                                 Test your knowledge of facts and figures about Dublin.
@@ -133,7 +133,7 @@
                             <br>
                             <button type="button" id="numstart">Start Quiz</button>
                         </article>
-                        <img src="images/numquizstart.jpg" alt="Decorative graphic showing buildings, people and horse and cart" class="numquizstartimg">
+                        <img src="images/numquizstart.jpg" alt="Decorative graphic showing buildings, people and horse and cart" class="numquiz-start-img">
                     </div>
                 </div>
                 <div class="numquestions inactive">
@@ -144,10 +144,10 @@
                         <button type="submit" id="guess">Check my answers!</button>
                     </form>
                 </div>
-                <div id="errorModal" class="modal">
+                <div id="error-modal" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="close" id="closemodal">&times;</span>
+                            <span class="close" id="close-modal">&times;</span>
                             <h3>Something went wrong!</h3>
                         </div>
                         <div id="modal-text"></div>
@@ -162,10 +162,10 @@
             </div>
 
             <div class="picquiz" id="picquiz">
-                <div class="quizstart">
+                <div class="quiz-start">
                     <h3>Picture this!</h3>
-                    <div class="quizstartcontent">
-                        <img src="images/picquizstart.jpg" alt="Decorative graphic showing castle, lightbulbs, cogs and books" class="picquizstart">
+                    <div class="quiz-start-content">
+                        <img src="images/picquizstart.jpg" alt="Decorative graphic showing castle, lightbulbs, cogs and books" class="picquiz-start">
                         <p>
                             Can you answer questions about the history of important Dublin landmarks and streets?
                             To play, just click the 'Start Quiz' button below to see a picture, a question and a list of possible answers.
@@ -185,19 +185,19 @@
             </div>
 
             <div class="mapquiz" id="mapquiz">
-                <div class="mapquizstart">
+                <div class="mapquiz-start">
                     <h3>What's Map-enning?</h3>
-                    <div class="mapquizstartcontent">
+                    <div class="mapquiz-start-content">
                         <article>
                             <p>Can you identify some of Dublin's oldest buildings on the oldest surviving map of Dublin?</p>
                             <p>To play, click the 'Start Quiz' button and follow the instructions!</p><br>
                             <button type="button" id="mapstart">Start Quiz</button>
                         </article>
-                        <img src="images/mapquizstart.jpg" alt="Decorative graphic showing map" class="mapquizstartimg">
+                        <img src="images/mapquizstart.jpg" alt="Decorative graphic showing map" class="mapquiz-start-img">
                     </div>
                 </div>
-                    <div class="mapquizcontent inactive" id="mapquizcontent">
-                        <div class="speedsmapquiz">
+                    <div class="mapquiz-content inactive" id="mapquiz-content">
+                        <div class="speeds-map-quiz">
                             <img src="images/mapanswer1.png" alt="Text box stating'St Michan's Church'" class="mapanswer1 inactive">
                             <img src="images/mapanswer2.png" alt="Text box stating 'Dublin Castle'" class="mapanswer2 inactive">
                             <img src="images/mapanswer3.png" alt="Text box stating 'St Patrick's Cathedral'" class="mapanswer3 inactive">
@@ -211,7 +211,7 @@
                                 </a>
                             </svg>
                         </div>
-                        <div class="mapinstructions">
+                        <div class="map-instructions">
                             <p>Can you find these buildings on Speed's 'Map of Dubline' of 1610?</p>
                             <p>(i) Dublin Castle (ii) St Patrick's Cathedral (iii) St Michan's Church</p>
                             <p>Simply click on where you think the building is on the map above.
@@ -222,26 +222,26 @@
                         <div class="results-comment">
                             <div class="results-comment-text"></div>
                             <button type="button" id="giveup" class="inactive">Give up!</button>
-                            <button type="button" id="learnMore" class="inactive">Learn more about Speed's Map</button>
-                            <button type="button" id="maprestart" class="maprestart inactive">Restart Quiz</button>
+                            <button type="button" id="learn-more" class="inactive">Learn more about Speed's Map</button>
+                            <button type="button" id="map-restart" class="map-restart inactive">Restart Quiz</button>
                         </div>
-                            <div id="mapModal" class="mapModal">
+                            <div id="map-modal" class="map-modal">
                                 <div class="map-modal-content">
                                     <div class="map-modal-header">
-                                        <span class="close" id="closemapmodal">&times;</span>
+                                        <span class="close" id="close-map-modal">&times;</span>
                                     </div>
-                                    <div id="mapModalText">
+                                    <div id="map-modal-text">
                                         <h3>This is a tricky one!</h3>
                                         <p>Dublin looked very different in 1610.</p>
                                         <p>Would you like to</p>
                                         <button type="button" id="giveup2">Give up!</button>
                                         <p>or</p>
-                                        <button type="button" id="keeptrying">Keep trying!</button>
+                                        <button type="button" id="keep-trying">Keep trying!</button>
                                     </div>
                                 </div>
                             </div>
                     </div>
-                    <div class="mapLearnMore inactive" id="mapLearnContainer">
+                    <div class="map-learn-more inactive" id="map-learn-container">
                         <h4>John Speed's 'Map of Dubline'</h4>
                         <p>John Speed's 'Map of Dubline' of 1610 is the oldest surviving map of Dublin City, this version of the map being a reprint of 1896.
                             The map was included in John Speed's atlas 'The Theatre of the Empire of Great Britaine' published in 1611. Speed likely never visited
@@ -257,9 +257,10 @@
                             Merchant's Quay, Dame Street, South Great George's Street, Thomas Street and St James Gate.
                         </p>
                         <img src="images/speedsmapfull.jpg" alt="Historic map of Dublin" class="speedfull">
-                        <button type="button" class="maprestart" id="maprestart2">Restart Quiz</button>
+                        <button type="button" class="map-restart" id="map-restart2">Restart Quiz</button>
                     </div>
                 </div>
+                <script src="js/utilities.js"></script>
                 <script src="js/nav.js"></script>
                 <script src="js/numquiz.js"></script>
                 <script src="js/picquiz.js"></script>
@@ -267,15 +268,8 @@
 
         </main>
         <footer>
-            <div class="footwrap">
-                <div class="foot1">
-                <!-- footer menu goes here -->
-                </div>
-                <div class="foot2">
-                    <ul>
-                        <li>E-mail: <a href="mailto:fake.email@dhq.com">fake.email@dhq.com</a></li>
-                    </ul>
-                </div>
+            <div class="foot-contact">
+                <p>E-mail: <a href="mailto:fake.email@dhq.com">fake.email@dhq.com</a></p>
             </div>
             <div class="copy">
                 <p>&copy; 2024 Dublin History Quizzes. All rights reserved.</p>
