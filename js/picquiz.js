@@ -71,33 +71,13 @@ const quizData = [
     },
 ];
 
+const picQuizContainer = document.querySelector("#picquiz");
 const questionContainer = document.querySelector(".questions");
 const resultsContainer = document.querySelector(".results");
 const restartButton = document.querySelector("#restart");
 const totalSpan = document.querySelector("#total");
 const correctSpan = document.querySelector("#correct");
-const startContainer = document.querySelector(".quizstart");
-
-
-document.addEventListener('click', function(e){
-    const id = e.target.id;
-    if (id === "start") {
-        startContainer.classList.add("inactive");
-        questionContainer.classList.remove("inactive");
-        showQuestion();
-    } else if (id === "next") {
-        showQuestion();
-    } else if (id === "last") {
-        showResults();
-    } else if (id === "restart") {
-        startContainer.classList.remove("inactive");
-        resultsContainer.classList.add("inactive");
-        numCorrect = 0;
-        currentQuestionIndex=0;
-    }
-}
-);
-
+const startContainer = document.querySelector(".quiz-start");
 let currentQuestionIndex = 0;
 let numCorrect = 0;
 
@@ -118,7 +98,8 @@ function showQuestion() {
     answerButtons.forEach(button => {
         button.addEventListener("click", checkAnswer);
     }); 
-}
+};
+
 function checkAnswer(e) {
     const selectedButton = e.target;
     const currentQuestion = quizData[currentQuestionIndex];
@@ -144,12 +125,34 @@ function checkAnswer(e) {
         }
             resultText += `<p>${currentQuestion.fact}</p><break><button type="button" id="last">Show My Results!</button>`;
             questionContainer.innerHTML = `${resultText}`;
-}
-}
+    }
+};
 
 function showResults() {
-    questionContainer.classList.add("inactive");
-    resultsContainer.classList.remove("inactive");
+    hide(questionContainer);
+    show(resultsContainer);
     totalSpan.textContent = quizData.length;
     correctSpan.textContent = numCorrect;
-}
+};
+
+document.addEventListener('click', function(e){
+    const id = e.target.id;
+    if (id === "start") {
+        hide(startContainer);
+        show(questionContainer);
+        showQuestion();
+        picQuizContainer.scrollIntoView({behavior: "smooth"});
+    } else if (id === "next") {
+        showQuestion();
+        picQuizContainer.scrollIntoView({behavior: "smooth"});
+    } else if (id === "last") {
+        showResults();
+        questionContainer.scrollIntoView({behavior: "smooth"});
+    } else if (id === "restart") {
+        show(startContainer);
+        hide(resultsContainer);
+        picQuizContainer.scrollIntoView({behavior: "smooth"});
+        numCorrect = 0;
+        currentQuestionIndex=0;
+    }
+});
