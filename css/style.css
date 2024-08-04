@@ -424,8 +424,8 @@ main {
 
 
 .speeds-map-quiz {
-    width: 275px;
-    height: 366px;
+    width: 265px;
+    height: 353px;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 5% 15% 27% 19% 1% 17% 16%;
