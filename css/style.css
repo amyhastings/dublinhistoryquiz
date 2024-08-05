@@ -229,7 +229,7 @@ main {
 }
 
 .numresults {
-    margin: 30px;
+    margin: 10px;
 }
 
 .results-list {
@@ -550,6 +550,10 @@ footer {
         align-items: center;
     }
 
+    .numresults {
+        margin: 30px;
+    }
+
     .about-content {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -618,6 +622,10 @@ footer {
     .about-article p {
         margin-block-start: 0px;
         margin-block-end: 20px;
+    }
+
+    .numresults {
+        margin: 30px;
     }
 
     .numquiz-start,
