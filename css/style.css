@@ -14,7 +14,7 @@ body {
 
 @font-face {
     font-family: Essays1743;
-    src: url('fonts/Essays1743.ttf');
+    src: url('fonts/Essays1743.woff');
 }
 
 header {
@@ -187,48 +187,6 @@ header h2 {
 }
 
 
-#close-map-modal {
-    color: #000000;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-  
-.map-modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border-color: #4a7c73;
-    border-radius: 5px;
-    border-style: solid;
-    width: 60%; 
-    text-align: center;
-}
-
-#map-modal-text {
-    margin: 10px auto;
-}
-
-#map-modal-text h3 {
-    text-align: center;
-    margin: 20px 10px;
-}
-
-.map-modal {
-    display: none; 
-    position: fixed; 
-    z-index: 4; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
 
 main {
     max-width: 1000px;
@@ -355,6 +313,49 @@ main {
     text-align: center;
 }
 
+#close-map-modal {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  
+.map-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border-color: #4a7c73;
+    border-radius: 5px;
+    border-style: solid;
+    width: 60%; 
+    text-align: center;
+}
+
+#map-modal-text {
+    margin: 10px auto;
+}
+
+#map-modal-text h3 {
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.map-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 4; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
 .numquiz-start-content,
 .quiz-start-content,
 .mapquiz-start-content {
@@ -421,7 +422,6 @@ main {
     margin: 30px auto;
     display: block;
 }
-
 
 .speeds-map-quiz {
     width: 265px;
@@ -573,7 +573,6 @@ footer {
         width: 50%; 
     }
     
-    
     .speedsmaps {
         display: none;
     }
@@ -642,7 +641,4 @@ footer {
     .speedsmapl {
         display: block;
     }
-
-
-
 }
