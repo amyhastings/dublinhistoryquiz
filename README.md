@@ -1,1 +1,23 @@
 # dublinhistoryquiz
+
+### Purpose of the website
+This Dublin History Quizzes website comprises my project for Module 2: JavaScript of UCD's 24-03 Full-Stack Software Development Course. The objective of the project is as follows:
+
+> In this assignment, you will design, develop, and host a full web project from scratch, incorporating interactive aspects into its presentation. The goal is to showcase your comprehensive understanding of web development, with a focus on creating engaging user experiences through interactivity. Your project must utilize HTML, CSS, and JavaScript and must be hosted on GitHub Pages for accessibility and evaluation.
+
+I chose to prepare a website including a variety of short quizzes based on Dublin History. The primary purpose of the website is to encourage awareness of and engagement with local heritage among secondary school students. An ancillary purpose of the website is to provide a fun set of quizzes for any person interested in history or who wants to learn more about Dublin.
+
+### Required features of the website
+The text below outlines the principal requirements of the project for the website and how each requirement was satisfied.
+
+- *HTML Structure and Content.* The project brief outlines that a "single-page-application is appropriate". Given this only one HTML page was prepared and all other 'pages' are created through DOM manipulation with JavaScript. The HTML page includes HTML tags, to structure content, headings, paragraphs, lists, images and links. Different sections of the website can be accessed using the navigation bar at the top of the page, if desired.
+- *CSS Styling.* CSS styles were applied, as required to customize typography, colours, backgrounds, margins and padding. Responsiveness of this mobile-first website is addressed using CSS media queries.
+- *JavaScript Interactivity.* A quiz website was chosen for this project as it requires input from the user. Each quiz utilises event listeners and handlers to allow the user to interact with the website.
+- *Validate user input and provide appropriate feedback using JavaScript.* User input is validated in a number of places on the site: (i) in the Number Quiz, 'Dublin by the Numbers, if fields in the form are left blank and the form is submitted, a JavaScript function triggers a modal with an error message asking the user to complete the form; (ii) in the Number Quiz, for questions requiring the input of a date, if the user does not correctly input a valid year and the form is submitted, a JavaScript function triggers a modal with an error message asking the user to input a valid year; (iii) in the Number Quiz, if the user does not correctly input a valid quantity and the form is submitted, a JavaScript function triggers a modal with an error message asking the user to input a valid quantity; (iv) in the Map Quiz, 'What's Map-enning?', if the user cannot find the locations of the places listed in the quiz and clicks on the map more than three times without correctly identifying a place, a JavaScript function triggers a modal offering the user an opportunity to 'keep trying' or 'give up'.
+- *Minimum number of interactive elements.* The Dublin History Quizzes website includes the following elements: (i) 1 form processed by a JavaScript function: this element is included within the Number Quiz, 'Dublin by the Numbers'; (ii) at least 3 interactions involving DOM manipulation: a large proportion of user interactions with the site involve DOM manipulation, including showing / hiding the menu content; showing / hiding text; scrolling elements into view; generating text in response to user input (e.g. error messages; calculating user results); accessing the about page and images and buttons as the user progresses through the quizzes; and (iii) at least 1 graphical element: the Map Quiz, 'What's Map-enning?', includes a map, which has been converted to a HTML image map. The Map Quiz applies JavaScript functions so that, when a user clicks on the correct location for one of the identified places, that place will be highlighted and annotated.
+
+### Installation
+A version of the website is deployed here: https://amyhastings.github.io/dublinhistoryquiz/. To view this website off-line and/or make changes, clone this gitHub repository and open the html files with your browser.
+
+### Licensing
+All photographs on the website are the copyright of Amy Hastings. Etchings, engravings and mapping used on the site are in the public domain. The image of Speed’s ‘Map of Dubline’ is a Creative Commons image provided by The British Library and available at https://commons.wikimedia.org/wiki/File:Dublin_in_1610_-_reprint_of_1896.jpg.
